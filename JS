@@ -3,8 +3,8 @@ const fs = require("fs");
 const path = require("path");
 
 // 设置GitHub用户名和仓库名
-const owner = 'NaiboWang';
-const repo = 'EasySpider';
+const owner = '';
+const repo = '';
 let config = fs.readFileSync(path.join(__dirname, `package.json`), 'utf8');
 config = JSON.parse(config);
 const version = config.version;
@@ -26,7 +26,7 @@ https.get(`https://api.github.com/repos/${owner}/${repo}/releases/latest`, {
         const latestVersion = release.tag_name.replace('v', '');
         console.log(`Latest version is ${latestVersion}`);
         if(version !== latestVersion) {
-            console.log('There is a new version of EasySpider, you can download it from github repo: https://github.com/NaiboWang/EasySpider/releases');
+            console.log('There is a new version of EasySpider, you can download it from github repo: https://github.com/EasySpider/releases');
         }
     });
 }).on('error', (err) => {
